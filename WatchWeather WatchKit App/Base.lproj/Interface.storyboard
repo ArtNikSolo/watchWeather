@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14490.70" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="m7l-Z5-OUM">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14490.21"/>
+    </dependencies>
+    <scenes>
+        <!--Weather-->
+        <scene sceneID="CEz-wz-6Ne">
+            <objects>
+                <controller identifier="Weather" hidesWhenLoading="NO" id="m7l-Z5-OUM" customClass="WeatherInterfaceController" customModule="WatchWeather_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="center" layout="vertical" id="7e2-fr-rUr">
+                            <items>
+                                <label alignment="center" text="City Name" id="j2O-n5-r0C"/>
+                                <label alignment="center" text="Country" id="bJi-Lq-zOm">
+                                    <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                                </label>
+                            </items>
+                            <edgeInsets key="margins" left="0.0" right="0.0" top="4" bottom="0.0"/>
+                        </group>
+                        <group width="1" alignment="center" id="aN3-FJ-Mpz">
+                            <items>
+                                <label width="50" height="50" alignment="center" text="68" textAlignment="center" id="Aon-F9-XCp">
+                                    <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" style="UICTFontTextStyleTitle0"/>
+                                </label>
+                                <imageView width="50" height="50" alignment="center" image="clear-day" id="WgQ-S8-A0Y">
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </imageView>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="Hs9-ch-LAt">
+                            <items>
+                                <imageView width="20" height="20" alignment="left" verticalAlignment="center" image="humidity" id="3fW-Vm-kTx">
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </imageView>
+                                <label alignment="left" verticalAlignment="center" text="100%" textAlignment="left" id="dO5-mC-Fis">
+                                    <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                                </label>
+                                <label alignment="right" verticalAlignment="center" text="100%" id="knQ-xU-R5v">
+                                    <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                                </label>
+                                <imageView width="20" height="20" alignment="right" image="windSpeed" id="L18-5D-qVY">
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </imageView>
+                            </items>
+                        </group>
+                        <group width="1" alignment="center" verticalAlignment="bottom" id="D3C-9H-gi0">
+                            <items>
+                                <table alignment="left" id="zaX-V7-NpQ">
+                                    <items>
+                                        <tableRow identifier="weatherPrediction" id="NKw-V6-sNA" customClass="weatherRowController" customModule="WatchWeather_WatchKit_Extension">
+                                            <group key="rootItem" width="1" alignment="left" id="QCD-G6-M5T">
+                                                <items>
+                                                    <label alignment="left" verticalAlignment="center" text="Mon" textAlignment="left" id="KuT-Lu-gUJ">
+                                                        <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                                    </label>
+                                                    <label alignment="right" verticalAlignment="center" text="68" id="sDY-jg-q1G">
+                                                        <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                                                    </label>
+                                                    <imageView width="20" height="20" alignment="right" verticalAlignment="center" image="clear-day" id="Qcy-6a-CCz">
+                                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </imageView>
+                                                </items>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                            </group>
+                                            <connections>
+                                                <outlet property="day" destination="KuT-Lu-gUJ" id="T9P-3M-kQy"/>
+                                                <outlet property="temperature" destination="sDY-jg-q1G" id="ohu-5m-6tN"/>
+                                                <outlet property="weatherIcon" destination="Qcy-6a-CCz" id="1eI-aU-PPC"/>
+                                            </connections>
+                                        </tableRow>
+                                    </items>
+                                </table>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="city" destination="j2O-n5-r0C" id="SU2-14-Pt0"/>
+                        <outlet property="country" destination="bJi-Lq-zOm" id="HGa-eT-20C"/>
+                        <outlet property="humidity" destination="dO5-mC-Fis" id="zyQ-08-njP"/>
+                        <outlet property="temperature" destination="Aon-F9-XCp" id="YV6-cl-X5p"/>
+                        <outlet property="weatherIcon" destination="WgQ-S8-A0Y" id="Jdi-TW-5bK"/>
+                        <outlet property="weatherPredictionsTable" destination="zaX-V7-NpQ" id="HPE-Ov-dqe"/>
+                        <outlet property="windSpeed" destination="knQ-xU-R5v" id="AZE-RH-wu1"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="71" y="-218"/>
+        </scene>
+    </scenes>
+</document>
